@@ -27,7 +27,7 @@ public:
 	void Subscribe(IObserver* observer, const std::type_info& type);
 	void Unsubscribe(IObserver* observer, const std::type_info& type);
 
-	std::map<CEventType, std::vector<std::pair<bool, IObserver*>>> mObserverMap{};
+	//std::map<CEventType, std::vector<std::pair<bool, IObserver*>>> mObserverMap{};
 	std::atomic_int mEventsInFlight = 0;
 	boost::recursive_mutex mMutex{};
 	std::array<std::deque<IEvent*>, 2> mEventQueue{};

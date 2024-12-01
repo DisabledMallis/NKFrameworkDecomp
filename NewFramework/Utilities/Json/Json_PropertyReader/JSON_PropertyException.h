@@ -1,5 +1,7 @@
 #pragma once
+
 #include <stdexcept>
+#include <string>
 
 struct JSON_PropertyException : public std::runtime_error
 {

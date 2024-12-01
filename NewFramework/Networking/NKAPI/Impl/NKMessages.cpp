@@ -50,7 +50,7 @@ void NKJSON::Serialise(const NKMessage& val, json_spirit::mObject& obj)
 void NKJSON::Serialise(const NKMessageSession& val, json_spirit::mObject& obj)
 {
     obj["sessionID"] = val.sessionID;
-    obj["expires"] = val.expires;
+    obj["expires"] = static_cast<uint64_t>(val.expires);
 }
 
 void NKJSON::Serialise(const NKResponseLogin& val, json_spirit::mObject& obj)

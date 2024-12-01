@@ -1,7 +1,7 @@
 #include "EventManager.h"
 
 bool CEventManager::_SendEvent(IEvent* event, bool own) {
-	mEventsInFlight++;
+	/*mEventsInFlight++;
 	auto& observers = mObserverMap[typeid(event)];
 	bool cancelled = false;
 	for (auto& [flag, observer] : observers) {
@@ -11,5 +11,5 @@ bool CEventManager::_SendEvent(IEvent* event, bool own) {
 		delete event;
 	}
 	mEventsInFlight--;
-	return cancelled;
+	return cancelled;*/
 }

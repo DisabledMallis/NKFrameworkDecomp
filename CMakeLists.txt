@@ -186,7 +186,6 @@ target_include_directories(NKFrameworkDecomp
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-    PRIVATE
         ${Boost_INCLUDE_DIRS}
         ${JPEG_INCLUDE_DIR}
         ${jsonspirit_SOURCE_DIR}
@@ -194,7 +193,7 @@ target_include_directories(NKFrameworkDecomp
         ${ticpp_SOURCE_DIR}
 )
 
-target_link_libraries(NKFrameworkDecomp PRIVATE hashlibpp ${Boost_LIBRARIES} ${JPEG_LIBRARY} ${PNG_LIBRARY})
+target_link_libraries(NKFrameworkDecomp PUBLIC hashlibpp ${Boost_LIBRARIES} ${JPEG_LIBRARY} ${PNG_LIBRARY})
 
 # Installation
 include(GNUInstallDirs)
