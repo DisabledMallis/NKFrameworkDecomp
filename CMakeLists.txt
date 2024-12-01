@@ -23,6 +23,7 @@ target_sources(NKFrameworkDecomp
         NewFramework/BaseApplication/BasePointers.cpp
         NewFramework/Events/EventManager.cpp
         NewFramework/Events/Observer.cpp
+        NewFramework/Console/ConsoleVariable.cpp
         NewFramework/Graphics/Font/FontManager.cpp
         NewFramework/Graphics/Font/Font.cpp
         NewFramework/Graphics/Management/JPEG/JPEGTextures.cpp
@@ -39,8 +40,31 @@ target_sources(NKFrameworkDecomp
         NewFramework/Math/MathematicTypes/VectorDataStructures.cpp
         NewFramework/Math/Matrix.cpp
         NewFramework/Networking/NKAPI/Impl/NKMessages.cpp
+        NewFramework/Networking/NKAPI/Impl/NKSessionImpl.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_AuthenticateService.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CacheSession.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckErrorType.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckLoginServiceType.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckOnline.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckServiceActionType.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ClearSession.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_GetUser.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_HideWebView.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_IsServiceAuthenticated.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_OpenSessionUsingToken.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ReportErrorCallback.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ServiceAction.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_SessionHttpRequest.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_SetError.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ShowWebView.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_StoreStateCallback.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_WebViewErrorToolTip.cpp
+        NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_WebviewRequestListener.cpp
+        NewFramework/Networking/NKAPI/Modules/NKModule.cpp
         NewFramework/Networking/NKAPI/NKEndpoints.cpp
         NewFramework/Networking/NKAPI/NKError.cpp
+        NewFramework/Networking/NKAPI/NKModules.cpp
+        NewFramework/Networking/NKAPI/NKSession.cpp
         NewFramework/Networking/NKAPI/NKSignature.cpp
         NewFramework/Networking/Protocols/HTTP/HttpCallbackFunctor.cpp
         NewFramework/Networking/Protocols/HTTP/HttpRequest.cpp
@@ -50,7 +74,8 @@ target_sources(NKFrameworkDecomp
         NewFramework/ThirdParty/easyzlib/easyzlib.c
         NewFramework/ThirdParty/libpng/load_png.cpp
         NewFramework/Utilities/Encoding.cpp
-        NewFramework/Utilities/Json/Json_PropertyReader/JSON_Read.cpp
+        NewFramework/Utilities/JSON/JSON_PropertyReader/JSON_Read.cpp
+        NewFramework/Utilities/JSON/JSONWrapper.cpp
         NewFramework/Utilities/Misc/AssetBag.cpp
         NewFramework/Utilities/StringHelper.cpp
         NewFramework/Utilities/URLParser.cpp
@@ -60,6 +85,7 @@ target_sources(NKFrameworkDecomp
         Uncategorized/GlobalVariables.cpp
         Uncategorized/NKLoginService.cpp
         Uncategorized/NKLoginWebview.cpp
+        Uncategorized/NKRequestFactory.cpp
         Uncategorized/RGBA.cpp
         Uncategorized/SpriteInformation.cpp
         Uncategorized/StephenEncryption.cpp
@@ -80,6 +106,7 @@ target_sources(NKFrameworkDecomp
             NewFramework/BaseApplication/BasePointers.h
             NewFramework/Events/EventManager.h
             NewFramework/Events/Observer.h
+            NewFramework/Console/ConsoleVariable.h
             NewFramework/Graphics/Font/FontManager.h
             NewFramework/Graphics/Font/Font.h
             NewFramework/Graphics/Management/JPEG/JPEGTextures.h
@@ -98,8 +125,32 @@ target_sources(NKFrameworkDecomp
             NewFramework/Math/Maths.h
             NewFramework/Math/Matrix.h
             NewFramework/Networking/NKAPI/Impl/NKMessages.h
+            NewFramework/Networking/NKAPI/Impl/NKSessionImpl.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_AuthenticateService.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CacheSession.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckErrorType.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckLoginServiceType.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckOnline.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_CheckServiceActionType.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ClearSession.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_GetUser.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_HideWebView.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_IsServiceAuthenticated.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_OpenSessionUsingToken.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ReportErrorCallback.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ServiceAction.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_SessionHttpRequest.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_SetError.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_ShowWebView.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_StoreStateCallback.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_WebViewErrorToolTip.h
+            NewFramework/Networking/NKAPI/Impl/SessionActions/NKAction_WebviewRequestListener.h
+            NewFramework/Networking/NKAPI/Modules/NKModule.h
             NewFramework/Networking/NKAPI/NKEndpoints.h
             NewFramework/Networking/NKAPI/NKError.h
+            NewFramework/Networking/NKAPI/NKManager.h
+            NewFramework/Networking/NKAPI/NKModules.h
+            NewFramework/Networking/NKAPI/NKSession.h
             NewFramework/Networking/NKAPI/NKSignature.h
             NewFramework/Networking/Protocols/HTTP/HttpCallbackFunctor.h
             NewFramework/Networking/Protocols/HTTP/HttpRequest.h
@@ -112,8 +163,10 @@ target_sources(NKFrameworkDecomp
             NewFramework/ThirdParty/easyzlib/easyzlib.h
             NewFramework/ThirdParty/libpng/load_png.h
             NewFramework/Utilities/Encoding.h
-            NewFramework/Utilities/Json/Json_PropertyReader/JSON_PropertyException.h
-            NewFramework/Utilities/Json/Json_PropertyReader/JSON_Read.h
+            NewFramework/Utilities/JSON/JSON_PropertyReader/JSON_PropertyException.h
+            NewFramework/Utilities/JSON/JSON_PropertyReader/JSON_Read.h
+            NewFramework/Utilities/JSON/JSONWrapper.h
+            NewFramework/Utilities/Misc/AssetBag.h
             NewFramework/Utilities/StringHelper.h
             NewFramework/Utilities/URLParser.h
             NewFramework/Utilities/Utilities.h
@@ -124,6 +177,7 @@ target_sources(NKFrameworkDecomp
             Uncategorized/NKLoginQuery.h
             Uncategorized/NKLoginService.h
             Uncategorized/NKLoginWebview.h
+            Uncategorized/NKRequestFactory.h
             Uncategorized/ReferenceCounted.h
             Uncategorized/RGBA.h
             Uncategorized/SpriteInformation.h
@@ -143,12 +197,41 @@ if(APPLE)
 endif()
 
 # Packages
+include(FetchContent)
 find_package(Boost REQUIRED)
 find_package(JPEG REQUIRED)
 find_package(PNG REQUIRED)
 
+# jsoncpp
+set(HAS_JSONCPP False)
+
+find_package(PkgConfig QUIET)
+if(PkgConfig_FOUND)
+    pkg_check_modules(JSONCPP QUIET jsoncpp)
+    if(JSONCPP_FOUND)
+        set(HAS_JSONCPP True)
+        target_include_directories(NKFrameworkDecomp PRIVATE ${JSONCPP_INCLUDE_DIRS})
+        target_link_libraries(NKFrameworkDecomp PRIVATE ${JSONCPP_LIBRARIES})
+    endif()
+endif()
+
+if(NOT HAS_JSONCPP)
+    FetchContent_Declare(
+        jsoncpp
+        GIT_REPOSITORY https://github.com/open-source-parsers/jsoncpp.git
+        GIT_TAG 1.9.6)
+
+    set(JSONCPP_WITH_TESTS OFF CACHE BOOL "")
+    set(JSONCPP_WITH_POST_BUILD_UNITTEST OFF CACHE BOOL "")
+    set(JSONCPP_WITH_STRICT_ISO OFF CACHE BOOL "")
+    set(JSONCPP_WITH_PKGCONFIG_SUPPORT OFF CACHE BOOL "")
+    set(JSONCPP_WITH_CMAKE_PACKAGE OFF CACHE BOOL "")
+
+    FetchContent_MakeAvailable(jsoncpp)
+    target_link_libraries(NKFrameworkDecomp PUBLIC jsoncpp_static)
+endif()
+
 # jsonspirit
-include(FetchContent)
 FetchContent_Declare(
     jsonspirit
     GIT_REPOSITORY https://github.com/png85/json_spirit.git
@@ -156,9 +239,9 @@ FetchContent_Declare(
 )
 
 set(BUILD_STATIC_LIBRARIES ON)
-set(JSON_SPIRIT_MVALUE_ENABLED ON CACHE BOOL "Build with support for ascii map types")
-set(JSON_SPIRIT_DEMOS OFF CACHE BOOL "Enable building demos")
-set(JSON_SPIRIT_TESTS OFF CACHE BOOL "Enable building tests")
+set(JSON_SPIRIT_MVALUE_ENABLED ON CACHE BOOL "")
+set(JSON_SPIRIT_DEMOS OFF CACHE BOOL "")
+set(JSON_SPIRIT_TESTS OFF CACHE BOOL "")
 
 FetchContent_MakeAvailable(jsonspirit)
 

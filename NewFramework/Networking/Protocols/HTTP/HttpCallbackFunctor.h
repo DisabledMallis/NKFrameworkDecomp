@@ -1,6 +1,8 @@
 #pragma once
 #include "IHttpCallback.h"
 
+// i'm really conflicted on whether this field_8 actually exists.
+// the destructor of this class suggests so - or at least, that field_40 is actually at 0x40.
 struct HttpCallbackFunctor : IHttpCallback
 {
     void* field_8; // 0x08

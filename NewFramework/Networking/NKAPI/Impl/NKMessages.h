@@ -13,9 +13,12 @@ struct NKAccessToken
     std::string token; // 0x00
     time_t expires; // 0x18
 
-    NKAccessToken();
+    NKAccessToken() = default;
     NKAccessToken(const NKMessageSession& session)
         : token(session.sessionID), expires(session.expires) {}
+
+    // speculative: avoids repeating code
+    inline bool IsValid() const { return !token.empty() && expires; }
 };
 
 struct NKMessageAuth
@@ -98,8 +101,7 @@ struct NKResponseUtilityTime
     time_t time;
 };
 
-// TODO: implement TryParse template methods (depends on CJSONWrapper)
-// and implement TryParse for NKResponseUser (depends on CProfanityFilter and unimplemented GetXXX methods)
+// TODO: implement TryParse for NKResponseUser (depends on CProfanityFilter and unimplemented GetXXX methods)
 namespace NKJSON
 {
     template<typename T>

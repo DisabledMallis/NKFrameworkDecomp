@@ -9,8 +9,11 @@ namespace NKEndpoints
 {
     struct Endpoint
     {
-        std::string field_00;
-        bool field_18;
+        std::string path; // 0x00
+        bool isFullUrl{}; // 0x18
+
+        Endpoint(std::string path, bool isFullUrl) : path(path), isFullUrl(isFullUrl) {}
+        Endpoint() = default;
     };
 
     std::string GetBase(eNKLinkServerCluster cluster);
